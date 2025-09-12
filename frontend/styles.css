@@ -1,0 +1,248 @@
+:root{
+  --text:#1f2937;      /* huvudtext */
+  --line:#e5e7eb;      /* linjer/avdelare */
+  --hover:#f3f4f6;     /* bakgrund vid hover */
+  --bg:#ffffff;        /* sidbakgrund */
+  --brand:#2563eb;     /* accentfärg (hover/underline/knapp) */
+}
+
+*{ box-sizing:border-box }
+html, body{ margin:0; padding:0 }
+body{
+  font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+a{ color:inherit; text-decoration:none }
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 16px;
+}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.header-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+}
+.brand-name{
+  color:#1563a7;                        
+  font-size:clamp(28px, 4vw, 40px);   
+  font-weight:800;                    
+  letter-spacing:.5px;
+  line-height:1;
+}
+.main-nav{
+  flex:1;                             
+  display:flex;
+  justify-content:center;             
+  gap:16px;
+  margin:0;
+}
+.main-nav a{
+  position:relative;
+  padding:8px 12px;
+  border-radius:8px;
+  color:inherit;
+  transition:color .2s ease, background .2s ease;
+}
+.main-nav a:hover{
+  background:var(--hover);
+  color:var(--brand);
+}
+.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:10px; right:10px; bottom:-6px;
+  height:2px;
+  background:var(--brand);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease;
+  border-radius:1px;
+}
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after{
+  transform:scaleX(1);
+}
+.main-nav a.active{
+  background:transparent;
+  color:inherit;
+  font-weight:700;
+}
+.main-nav a.active::after{
+  transform:scaleX(1);
+}
+.header-actions{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.btn{
+  padding:8px 12px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:8px;
+  cursor:pointer;
+  font:inherit;
+}
+.btn:hover{ background:var(--hover) }
+.btn.primary{
+  background:var(--brand);
+  color:#fff;
+  border-color:var(--brand);
+}
+.btn.primary:hover{
+  filter:brightness(.95);
+}
+.hero-section{
+  min-height:320px;
+  background: linear-gradient(135deg, #7b8ab3, #2563eb);
+  color:#fff;
+  display:grid; place-items:center;
+  text-align:center;
+  padding:32px 16px;
+}
+.hero-section .overlay{ max-width:1000px }
+.hero-section h1{
+  margin:0 0 12px;
+  font-size:clamp(22px, 4vw, 36px);
+}
+.hero-section .info-box{
+  display:inline-block;
+  padding:12px 16px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:12px;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  backdrop-filter:saturate(140%) blur(2px);
+}
+/* ========= Sticky footer ========= */
+html, body { height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main.page { flex: 1 0 auto; }
+
+.site-footer{
+  border-top: 1px solid var(--line);
+  margin-top: 0;
+  padding: 6px 0;
+  background: var(--hover);
+  color: var(--text);
+  font-size: 12px;
+  text-align: center;
+}
+.site-footer p{ margin: 0; line-height: 1.35; }
+
+/* ========= Företaget (foretaget.html) ========= */
+.about-hero{
+  background: linear-gradient(180deg, #164e79 0%, #a57b1f 55%, #f59e0b 100%);
+  color:#fff;
+  text-align:center;
+  padding:48px 16px;
+}
+.about-inner{ max-width:1100px; margin:0 auto; }
+.about-hero h1{
+  margin:0 0 20px;
+  font-weight:600;
+  line-height:1.3;
+  font-size:clamp(20px, 3vw, 34px);
+}
+.about-sub{
+  margin:0 auto;
+  max-width:900px;
+  font-size:clamp(16px, 2.2vw, 22px);
+}
+.contact-panels{ background:#fff; padding:28px 0; }
+.contact-grid{
+  display:grid;
+  gap:24px;
+}
+.contact-grid--4{
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+.address-pair{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+.contact-grid h3{
+  margin:0 0 10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:16px;
+  color:#6b7280;
+}
+ul.clean{ list-style:none; margin:0; padding:0; }
+ul.clean li{ padding:6px 0; border-bottom:1px dashed var(--line); }
+ul.clean li:last-child{ border-bottom:none; }
+
+/* === (support.html) === */
+.support-hero {
+  padding-top: 12px;
+  margin-bottom: clamp(190px, 40vw, 40px); 
+}
+.support-hero-box{
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.support-hero-box img{
+  width: 100%;
+  height: clamp(200px, 50vw, 210px); 
+  object-fit: cover;
+  display: block;
+}
+.support-title{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(24px, 5vw, 44px);
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+.support-text{
+  margin-top: clamp(12px, 2.5vw, 24px);
+  padding: 18px 0 8px;
+}
+.support-text h2{
+  margin: 0 0 6px;
+  font-size: clamp(16px, 2vw, 20px);
+}
+.support-text p{
+  margin: 0;
+  font-size: clamp(15px, 1.9vw, 18px);
+}
+.support-text a{
+  color: var(--brand);
+  text-decoration: none;
+}
+.support-text a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width:1100px){
+  .contact-grid--4 { grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width:700px){
+  .contact-grid--4 { grid-template-columns: 1fr; }
+  .header-row { flex-wrap: wrap;}
+  .main-nav { order: 3; width: 100%; justify-content: center; }
+  .header-actions { order: 2; width: 100%; justify-content: flex-end; }
+}
