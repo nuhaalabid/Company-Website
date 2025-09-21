@@ -237,6 +237,118 @@ ul.clean li:last-child{ border-bottom:none; }
   text-decoration: underline;
 }
 
+/* ================ BOKA (boka.html) ================ */
+
+/* Hero */
+.booking-hero{
+  padding: clamp(24px, 5vw, 48px) 0;
+  background: linear-gradient(135deg, #e8eefc, #f7faff);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.booking-hero h1{
+  margin: 0 0 6px;
+  font-size: clamp(24px, 4.4vw, 40px);
+}
+.booking-hero p{
+  margin: 0;
+  color: #475569;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* Sektion runt formuläret */
+.booking-section{
+  padding: clamp(20px, 5vw, 40px) 0;
+}
+
+/* Rutnät för formuläret */
+.form-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Enskilda fält */
+.field{ display: block; }
+.field span{
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* Inputs / textarea */
+.field input,
+.field textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+.field textarea{ resize: vertical; }
+
+.field input:focus,
+.field textarea:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+/* Felmeddelanden under fält */
+.err{
+  display: block;
+  min-height: 1.2em;            /* reservera lite plats även när tomt */
+  margin-top: 6px;
+  font-size: 12px;
+  color: #b91c1c;               /* röd */
+}
+
+/* Fullbredd-rader i grid (meddelande, knapprad, liten text) */
+.field--full{ grid-column: 1 / -1; }
+
+/* Knappraden */
+.form-actions{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Liten infosats under knapparna */
+.smallprint{
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Tack-rutan efter skickat */
+.success{
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.success h3{ margin-top: 0; }
+
+/* Helper för att dölja/visa (används av JS) */
+.hide{ display: none !important; }
+
+/*Login html*/
+.hide{display:none}
+.auth-card{max-width:520px;margin:24px auto;padding:24px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.field{display:block;margin:10px 0}
+.field span{display:block;font-size:14px;color:#6b7280;margin-bottom:6px}
+.field input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit}
+.err{color:#b91c1c;font-size:13px;min-height:1.2em}
+.row{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+
 @media (max-width:1100px){
   .contact-grid--4 { grid-template-columns: repeat(2, 1fr);}
 }
