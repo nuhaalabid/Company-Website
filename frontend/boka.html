@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boka tid – ICAP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-require-auth>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html"><span class="brand-name">ICAP</span></a>
+      <nav class="main-nav" aria-label="Huvudmeny">
+        <a href="index.html">Hem</a>
+        <a href="products.html">Produkter</a>
+        <a href="news.html">Nyheter</a>
+        <a href="foretaget.html">Företaget</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a href="boka.html" class="btn primary">Boka tid</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="booking-hero">
+      <div class="container">
+        <h1>Boka tid</h1>
+        <p>Fyll i formuläret så återkommer vi och bekräftar tiden.</p>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <div class="container">
+        <form id="booking-form" class="form-grid" novalidate>
+          <label class="field">
+            <span>Namn *</span>
+            <input type="text" name="name" required placeholder="För- och efternamn" />
+            <small class="err" data-err="name"></small>
+          </label>
+
+          <label class="field">
+            <span>E-post *</span>
+            <input type="email" name="email" required placeholder="namn@exempel.se" />
+            <small class="err" data-err="email"></small>
+          </label>
+
+          <label class="field">
+            <span>Telefon *</span>
+            <input type="tel" name="phone" required inputmode="tel" placeholder="07xx-xx xx xx" />
+            <small class="err" data-err="phone"></small>
+          </label>
+
+          <label class="field">
+            <span>Datum *</span>
+            <input type="date" name="date" required />
+            <small class="err" data-err="date"></small>
+          </label>
+
+          <label class="field">
+            <span>Tid *</span>
+            <input type="time" name="time" required />
+            <small class="err" data-err="time"></small>
+          </label>
+
+          <label class="field field--full">
+            <span>Meddelande (valfritt)</span>
+            <textarea name="message" rows="4" placeholder="Berätta kort vad du behöver hjälp med…"></textarea>
+          </label>
+
+          <div class="form-actions field--full">
+            <a href="index.html" class="btn">Avbryt</a>
+            <button type="submit" class="btn primary">Skicka förfrågan</button>
+          </div>
+
+          <p class="smallprint field--full">Vi kontaktar dig via e-post/telefon för att bekräfta tiden.</p>
+        </form>
+
+        <div id="booking-success" class="success hide" role="status" aria-live="polite">
+          <h3>Tack! Din förfrågan är mottagen.</h3>
+          <p>Vi återkommer så snart vi kan och bekräftar tiden.</p>
+          <a href="index.html" class="btn">Till startsidan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Copyright © ICAP AB | All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="boka.js"></script>
+</body>
+</html>
