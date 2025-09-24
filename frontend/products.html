@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Support –ICAP</title>
+  <title>Produkter – ICAP</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,37 +12,29 @@
       <a class="brand" href="index.html"><span class="brand-name">ICAP</span></a>
       <nav class="main-nav" aria-label="Huvudmeny">
         <a href="index.html">Hem</a>
-        <a href="products.html">Produkter</a>
+        <a href="products.html" class="active">Produkter</a>
         <a href="news.html">Nyheter</a>
         <a href="foretaget.html">Företaget</a>
-        <a href="support.html" class="active">Support</a>
+        <a href="support.html">Support</a>
       </nav>
       <div class="header-actions">
-        <a href="boka.html"  class="btn cta-book" id="btn-book">Boka tid</a>
-        <a href="login.html" class="btn" id="btn-login">Logga in</a>
+        <a href="boka.html" class="btn">Boka tid</a>
         <a href="cart.html" class="btn cart">
-       🛒 Kundvagn <span id="cart-count" class="badge"></span>
+        🛒 Kundvagn <span id="cart-count" class="badge"></span>
        </a>
       </div>
     </div>
   </header>
-
   <main class="page">
-    <section class="support-hero">
+    <section class="products-hero">
       <div class="container">
-        <div class="support-hero-box">
-          <img src="assets/kontakta-oss.png" alt="Service & Support" />
-        </div>
+        <h1>Produkter</h1>
       </div>
     </section>
 
-    <section class="support-text">
+    <section class="product-list">
       <div class="container">
-        <h2>Produktfrågor eller kontakta säljare:</h2>
-        <p>
-          Maila till <a href="mailto:info@icap.nu">info@icap.nu</a>
-          alt. gå till <a href="foretaget.html">kontakta oss</a>.
-        </p>
+        <div id="product-grid" class="product-grid"></div>
       </div>
     </section>
   </main>
@@ -51,6 +43,8 @@
     <div class="container">
       <p>Copyright © ICAP AB | All Rights Reserved.</p>
     </div>
-  </footer>
+</footer>
+  <script src="cart.js"></script>
+  <script src="products.js"></script>
 </body>
 </html>
